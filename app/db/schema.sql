@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS pyton_news_db; 
+DROP DATABASE IF EXISTS python_news_db;
 
-CREATE DATABASE pyton_news_db; 
+CREATE DATABASE python_news_db;
