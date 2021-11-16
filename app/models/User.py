@@ -3,6 +3,8 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import validates
 import bcrypt
 
+salt = bcrypt.gensalt()
+
 class User(Base):
   __tablename__ = 'users'
   id = Column(Integer, primary_key=True)
@@ -25,4 +27,3 @@ class User(Base):
    return bcrypt.hashpw(password.encode('utf-8'), salt)
 
 
-salt = bcrypt.gensalt()

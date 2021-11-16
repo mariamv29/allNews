@@ -16,12 +16,11 @@ Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
 def init_db():
-    Base.metadata.create_all(engine)
-
+  Base.metadata.create_all(engine)
 
 def get_db():
     if 'db' not in g:
         # sore db connection in app context 
         g.db = Session()
-        
+
     return g.db
