@@ -1,11 +1,9 @@
 from flask import Blueprint, request, jsonify
+
 from app.models import User
 from app.db import get_db
 
-
-bp = Blueprint(
-    'api', __name__, url_prefix='/api'
-)
+bp = Blueprint('api', __name__, url_prefix='/api')
 
 @bp.route('/users', methods=['POST'])
 def signup():
@@ -23,4 +21,4 @@ def signup():
   db.add(newUser)
   db.commit()
 
-  return jsonify(id = newUser.id) 
+  return jsonify(id = newUser.id)
